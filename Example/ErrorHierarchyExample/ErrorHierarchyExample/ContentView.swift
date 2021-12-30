@@ -15,14 +15,17 @@ struct ContentView: View {
 				ZStack {
 					TriggerView()
 				}
-				.receiveError {
+				.receiveError(FirstError.self) {
 					print("Ignoring error", $0)
 					return .notHandled
 				}
 			}
-			.transformError { _ in SecondError.second }
+			.transformError(FirstError.self) {
+				print("Transforming error from", $0, "to", SecondError.second)
+				return SecondError.second
+			}
 		}
-		.handleError {
+		.handleError(SecondError.self) {
 			print("Handling error", $0)
 		}
 	}
