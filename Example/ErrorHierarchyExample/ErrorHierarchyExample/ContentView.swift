@@ -28,6 +28,7 @@ struct ContentView: View {
 		.handleError(SecondError.self) {
 			print("Handling error", $0)
 		}
+		.handleAlertErrors()
 	}
 }
 
@@ -39,17 +40,35 @@ enum SecondError: Error {
 	case second
 }
 
+struct UserError: AlertableError {
+	var message: String { "Error Triggered" }
+}
+
+enum UnhandledError: Error {
+	case unhandled
+}
+
 struct TriggerView: View {
 	@Environment(\.errorReporter) var errorReporter
 	
 	var body: some View {
-		Button(action: buttonAction) {
-			Text("Trigger Error")
+		VStack(spacing: 20) {
+			Button("Trigger First Console Error") {
+				errorReporter(FirstError.first)
+			}
+			Button("Trigger Second Console Error") {
+				errorReporter(SecondError.second)
+			}
+			Button("Trigger Alert Error") {
+				errorReporter(UserError())
+			}
+			Button("Trigger Unhandled Error") {
+				errorReporter(UnhandledError.unhandled)
+			}
+			.tint(.red)
 		}
-	}
-	
-	func buttonAction() {
-		errorReporter(FirstError.first)
+		.buttonStyle(.borderedProminent)
+		.tint(.blue)
 	}
 }
 

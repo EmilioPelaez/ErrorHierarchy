@@ -23,6 +23,4 @@ extension EnvironmentValues {
 		get { self[ErrorClosureEnvironmentKey.self] }
 		set { self[ErrorClosureEnvironmentKey.self] = newValue }
 	}
-	
-	
 }

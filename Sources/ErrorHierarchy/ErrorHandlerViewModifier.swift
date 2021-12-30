@@ -1,7 +1,4 @@
 //
-//  File.swift
-//  
-//
 //  Created by Emilio Peláez on 30/12/21.
 //
 
