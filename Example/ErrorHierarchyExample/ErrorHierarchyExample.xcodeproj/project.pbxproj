@@ -11,6 +11,7 @@
 		C83A0D82277DAF6D009BED68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A0D81277DAF6D009BED68 /* ContentView.swift */; };
 		C83A0D84277DAF6D009BED68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83A0D83277DAF6D009BED68 /* Assets.xcassets */; };
 		C83A0D87277DAF6D009BED68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83A0D86277DAF6D009BED68 /* Preview Assets.xcassets */; };
+		C83A0D91277DB58B009BED68 /* ErrorHierarchy in Frameworks */ = {isa = PBXBuildFile; productRef = C83A0D90277DB58B009BED68 /* ErrorHierarchy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83A0D91277DB58B009BED68 /* ErrorHierarchy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +41,7 @@
 				C83A0D7E277DAF6D009BED68 /* ErrorHierarchyExample */,
 				C83A0D8D277DAF98009BED68 /* Packages */,
 				C83A0D7D277DAF6D009BED68 /* Products */,
+				C83A0D8F277DB58B009BED68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +80,13 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		C83A0D8F277DB58B009BED68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,6 +103,9 @@
 			dependencies = (
 			);
 			name = ErrorHierarchyExample;
+			packageProductDependencies = (
+				C83A0D90277DB58B009BED68 /* ErrorHierarchy */,
+			);
 			productName = ErrorHierarchyExample;
 			productReference = C83A0D7C277DAF6D009BED68 /* ErrorHierarchyExample.app */;
 			productType = "com.apple.product-type.application";
@@ -351,6 +364,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C83A0D90277DB58B009BED68 /* ErrorHierarchy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ErrorHierarchy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C83A0D74277DAF6D009BED68 /* Project object */;
 }
