@@ -34,6 +34,10 @@ public extension View {
 		return modifier(handlerModifier)
 	}
 	
+	func receiveError<Received: Error>(_ type: Received.Type, closure: @escaping () -> ReceiveErrorResult) -> some View {
+		receiveError(type) { _ in closure() }
+	}
+	
 	func handleError(_ handler: @escaping (Error) -> Void) -> some View {
 		receiveError {
 			handler($0)
@@ -41,7 +45,7 @@ public extension View {
 		}
 	}
 	
-	func handleError<Handled: Error>(_ type: Handled.Type,  handler: @escaping (Handled) -> Void) -> some View {
+	func handleError<Handled: Error>(_ type: Handled.Type, handler: @escaping (Handled) -> Void) -> some View {
 		receiveError {
 			if let error = $0 as? Handled {
 				handler(error)
@@ -50,6 +54,10 @@ public extension View {
 				return .notHandled
 			}
 		}
+	}
+	
+	func handleError<Handled: Error>(_ type: Handled.Type, handler: @escaping () -> Void) -> some View {
+		handleError(type) { _ in handler() }
 	}
 	
 	func transformError(_ transform: @escaping (Error) -> Error) -> some View {
@@ -66,4 +74,8 @@ public extension View {
 		return modifier(transformModifier)
 	}
 	
+	func transformError<Transformable: Error>(_ type: Transformable.Type, transform: @escaping () -> Error) -> some View {
+		transformError(type) { _ in transform() }
+	}
+		
 }
