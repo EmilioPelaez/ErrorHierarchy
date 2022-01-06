@@ -35,8 +35,8 @@ struct AlertableErrorHandlerModifier: ViewModifier {
 				}
 				.alert(isPresented: showAlert) {
 					Alert(title: Text(alertError?.title ?? "Error"),
-								message: Text(alertError?.message ?? ""),
-								dismissButton: .default(Text("Okay")))
+					      message: Text(alertError?.message ?? ""),
+					      dismissButton: .default(Text("Okay")))
 				}
 		}
 	}

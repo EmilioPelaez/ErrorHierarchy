@@ -6,7 +6,7 @@ import SwiftUI
 
 public extension EnvironmentValues {
 	var errorReporter: (Error) -> Void {
-		{  _ = errorClosure($0) }
+		{ _ = errorClosure($0) }
 	}
 }
 
