@@ -16,6 +16,7 @@ struct FourthError: Error {}
 struct FifthError: AlertableError {
 	var message: String { "Test 3" }
 }
+
 struct SixthError: Error {}
 
 struct ContentView: View {
