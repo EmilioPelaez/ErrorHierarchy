@@ -1,5 +1,7 @@
 # Error Hierarchy
 
+![Test Workflow](https://github.com/EmilioPelaez/EventHierarchy/actions/workflows/Test.yml/badge.svg)
+
 This is a sibling framework to [`EventHierarchy`](https://github.com/EmilioPelaez/EventHierarchy), but specialized for Error handling.
 
 Using a closure contained in `EnvironmentValues`, `View` objects that are lower in the hierarchy report `Error` objects up the view hierarchy, while views that are higher in the hierarchy use one of the modifiers to register themselves as a responder to receive, transform, or handle the `Error` objects.
