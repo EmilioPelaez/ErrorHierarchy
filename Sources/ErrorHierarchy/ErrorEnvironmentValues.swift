@@ -17,19 +17,18 @@ public extension EnvironmentValues {
 	 `assertionFailure` will be triggered.
 	 */
 	var reportError: (Error) -> Void {
-		{ _ = errorClosure($0) }
+		{ errorClosure($0) }
 	}
 }
 
 struct ErrorClosureEnvironmentKey: EnvironmentKey {
-	static var defaultValue: (Error) -> Error? = { error in
+	static var defaultValue: (Error) -> Void = { error in
 		assertionFailure("Unhandled Error \(error)")
-		return error
 	}
 }
 
 extension EnvironmentValues {
-	var errorClosure: (Error) -> Error? {
+	var errorClosure: (Error) -> Void {
 		get { self[ErrorClosureEnvironmentKey.self] }
 		set { self[ErrorClosureEnvironmentKey.self] = newValue }
 	}

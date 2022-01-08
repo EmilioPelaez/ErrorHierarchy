@@ -12,9 +12,8 @@ struct ErrorHandlerViewModifier: ViewModifier {
 	func body(content: Content) -> some View {
 		content.environment(\.errorClosure) {
 			if let result = handler($0) {
-				_ = errorClosure(result)
+				errorClosure(result)
 			}
-			return nil
 		}
 	}
 }
