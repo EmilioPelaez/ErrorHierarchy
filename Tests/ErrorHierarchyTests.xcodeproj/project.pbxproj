@@ -83,7 +83,6 @@
 		C8B9FC872789D7A900A4474A /* ErrorHierarchyTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8B9FCA12789D86200A4474A /* New Group */,
 				C8B9FC962789D7D700A4474A /* Source */,
 				C8B9FC882789D7A900A4474A /* ErrorHierarchyTestsApp.swift */,
 				C8B9FC8A2789D7A900A4474A /* ContentView.swift */,
@@ -111,13 +110,6 @@
 				C8B9FC972789D7F400A4474A /* View+ErrorHandling.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		C8B9FCA12789D86200A4474A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		C8B9FCB02789D9A900A4474A /* ErrorHierarchyUITests */ = {

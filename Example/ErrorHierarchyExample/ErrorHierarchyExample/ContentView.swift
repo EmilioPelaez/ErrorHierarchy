@@ -49,21 +49,21 @@ enum UnhandledError: Error {
 }
 
 struct TriggerView: View {
-	@Environment(\.errorReporter) var errorReporter
+	@Environment(\.reportError) var reportError
 	
 	var body: some View {
 		VStack(spacing: 20) {
 			Button("Trigger First Console Error") {
-				errorReporter(FirstError.first)
+				reportError(FirstError.first)
 			}
 			Button("Trigger Second Console Error") {
-				errorReporter(SecondError.second)
+				reportError(SecondError.second)
 			}
 			Button("Trigger Alert Error") {
-				errorReporter(UserError())
+				reportError(UserError())
 			}
 			Button("Trigger Unhandled Error") {
-				errorReporter(UnhandledError.unhandled)
+				reportError(UnhandledError.unhandled)
 			}
 			.tint(.red)
 		}

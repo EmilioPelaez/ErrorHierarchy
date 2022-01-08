@@ -66,3 +66,11 @@ Any error that is handled will no longer be propagated up the view hierarchy. Th
 ### Transforming an `Error`
 
 Transforming functions can be used to replace the received `Error`. It could be an `Error` of a different type, or an `Error` of the same type but with different values.
+
+### Alertable Errors
+
+`AlertableError` is a protocol that user-facing errors can conform to. The only non-optional requirement is a `message` `String` that will be displayed to the user.
+
+By using the `.handleAlertErrors()` modifier, any alertable errors will be handled by displaying an alert to the user with a single dismiss button.
+
+__Note:__ If the error is triggered by a `View` contained in a sheet, this modifier needs to be called inside the body of the sheet, or it will fail to display the alert. This also applies to popovers and other similar modifiers.
