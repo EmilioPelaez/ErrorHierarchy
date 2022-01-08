@@ -1,6 +1,6 @@
 # Error Hierarchy
 
-This is a sibling framework to [`ActionHierarchy`](https://github.com/EmilioPelaez/ActionHierarchy), but specialized for Error handling.
+This is a sibling framework to [`EventHierarchy`](https://github.com/EmilioPelaez/EventHierarchy), but specialized for Error handling.
 
 Using a closure contained in `EnvironmentValues`, `View` objects that are lower in the hierarchy report `Error` objects up the view hierarchy, while views that are higher in the hierarchy use one of the modifiers to register themselves as a responder to receive, transform, or handle the `Error` objects.
 
