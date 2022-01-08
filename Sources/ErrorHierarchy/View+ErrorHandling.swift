@@ -93,12 +93,11 @@ public extension View {
 	 */
 	func handleError<Handled: Error>(_: Handled.Type, handler: @escaping (Handled) -> Void) -> some View {
 		receiveError {
-			if let error = $0 as? Handled {
-				handler(error)
-				return .handled
-			} else {
+			guard let error = $0 as? Handled else {
 				return .notHandled
 			}
+			handler(error)
+			return .handled
 		}
 	}
 	

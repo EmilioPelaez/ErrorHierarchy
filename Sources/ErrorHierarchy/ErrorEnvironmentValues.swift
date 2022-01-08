@@ -16,7 +16,7 @@ public extension EnvironmentValues {
 	 If no view has registered an action that handles the `Error`, an
 	 `assertionFailure` will be triggered.
 	 */
-	var errorReporter: (Error) -> Void {
+	var reportError: (Error) -> Void {
 		{ _ = errorClosure($0) }
 	}
 }

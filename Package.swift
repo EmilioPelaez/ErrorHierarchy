@@ -19,9 +19,5 @@ let package = Package(
 			name: "ErrorHierarchy",
 			dependencies: []
 		),
-		.testTarget(
-			name: "ErrorHierarchyTests",
-			dependencies: ["ErrorHierarchy"]
-		),
 	]
 )
