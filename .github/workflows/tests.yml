@@ -12,7 +12,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
     - name: Run unit tests
       run: |
-          xcodebuild test -scheme Tests/ErrorHierarchyTests -project ErrorHierarchyTests.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.2' -derivedDataPath Build/ | xcpretty
+          xcodebuild test -scheme ErrorHierarchyTests -project Tests/ErrorHierarchyTests.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.2' -derivedDataPath Build/
           cd Tests/Build/Build/ProfileData
           cd $(ls -d */|head -n 1)
           directory=${PWD##*/}
