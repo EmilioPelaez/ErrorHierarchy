@@ -1,6 +1,11 @@
 # Error Hierarchy
 
-![Test Workflow](https://github.com/EmilioPelaez/EventHierarchy/actions/workflows/Test.yml/badge.svg)
+[![tests](https://github.com/EmilioPelaez/ErrorHierarchy/actions/workflows/Test.yml/badge.svg)](https://github.com/EmilioPelaez/ErrorHierarchy/actions/workflows/Test.yml)
+[![codecov](https://codecov.io/gh/EmilioPelaez/ErrorHierarchy/branch/main/graph/badge.svg?token=PTWX2D5ZVK)](https://codecov.io/gh/EmilioPelaez/ErrorHierarchy)
+[![Platforms](https://img.shields.io/badge/platforms-iOS%20|%20macOS%20|%20tvOS%20%20|%20watchOS-lightgray.svg)]()
+[![Swift 5.5](https://img.shields.io/badge/swift-5.5-red.svg?style=flat)](https://developer.apple.com/swift)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
+[![Twitter](https://img.shields.io/badge/twitter-@emiliopelaez-blue.svg)](http://twitter.com/emiliopelaez)
 
 This is a sibling framework to [`EventHierarchy`](https://github.com/EmilioPelaez/EventHierarchy), but specialized for Error handling.
 
