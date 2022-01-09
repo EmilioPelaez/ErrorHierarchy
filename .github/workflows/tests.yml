@@ -12,12 +12,11 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
     - name: Run unit tests
       run: |
-          cd Tests
-          xcodebuild test -scheme ErrorHierarchyTests -project ErrorHierarchyTests.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.2' -derivedDataPath Build/ | xcpretty
-          cd Build/Build/ProfileData
+          xcodebuild test -scheme Tests/ErrorHierarchyTests -project ErrorHierarchyTests.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.2' -derivedDataPath Build/ | xcpretty
+          cd Tests/Build/Build/ProfileData
           cd $(ls -d */|head -n 1)
           directory=${PWD##*/}
-          pathCoverage=Build/Build/ProfileData/${directory}/Coverage.profdata
-          cd ../../../../
-          xcrun llvm-cov export -format="lcov" -instr-profile $pathCoverage Products/Debug-iphonesimulator/ErrorHierarchyTests.app/ErrorHierarchyTests > info.lcov
+          pathCoverage=Tests/Build/Build/ProfileData/${directory}/Coverage.profdata
+          cd ../../../../../
+          xcrun llvm-cov export -format="lcov" -instr-profile $pathCoverage Tests/Build/Build/Products/Debug-iphonesimulator/ErrorHierarchyTests.app/ErrorHierarchyTests > info.lcov
           bash <(curl https://codecov.io/bash)
