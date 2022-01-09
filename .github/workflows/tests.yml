@@ -13,10 +13,10 @@ jobs:
     - name: Run unit tests
       run: |
           xcodebuild test -scheme ErrorHierarchyTests -project Tests/ErrorHierarchyTests.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 13 mini,OS=15.2' -derivedDataPath Build/
-          cd Tests/Build/Build/ProfileData
+          cd Build/Build/ProfileData
           cd $(ls -d */|head -n 1)
           directory=${PWD##*/}
-          pathCoverage=Tests/Build/Build/ProfileData/${directory}/Coverage.profdata
-          cd ../../../../../
-          xcrun llvm-cov export -format="lcov" -instr-profile $pathCoverage Tests/Build/Build/Products/Debug-iphonesimulator/ErrorHierarchyTests.app/ErrorHierarchyTests > info.lcov
+          pathCoverage=Build/Build/ProfileData/${directory}/Coverage.profdata
+          cd ../../../../
+          xcrun llvm-cov export -format="lcov" -instr-profile $pathCoverage Build/Build/Products/Debug-iphonesimulator/ErrorHierarchyTests.app/ErrorHierarchyTests > info.lcov
           bash <(curl https://codecov.io/bash)
