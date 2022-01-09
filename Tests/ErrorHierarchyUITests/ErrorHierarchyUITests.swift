@@ -37,7 +37,5 @@ class ErrorHierarchyUITests: XCTestCase {
 		app.buttons["Okay"].tap()
 		
 		app.buttons["Test 4"].tap()
-		
-		XCTAssert(false)
 	}
 }
