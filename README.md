@@ -1,3 +1,5 @@
+# Deprecation Notice
+## ErrorHierarchy and EventHierarchy have been merged into [HierarchyResponder](https://github.com/EmilioPelaez/HierarchyResponder), which not only includes support for both events and errors, it also allows interoperability between the two, allowing you to catch errors and convert them into events, and adding throwing support to event responders.
 # Error Hierarchy
 
 [![tests](https://github.com/EmilioPelaez/ErrorHierarchy/actions/workflows/tests.yml/badge.svg)](https://github.com/EmilioPelaez/ErrorHierarchy/actions/workflows/tests.yml)
